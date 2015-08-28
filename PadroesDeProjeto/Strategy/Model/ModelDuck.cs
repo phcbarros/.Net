@@ -1,18 +1,17 @@
 ﻿
 namespace Strategy.Duck.Model
 {
-    public class DecoyDuck : Duck
+    public class ModelDuck : Duck
     {
-        public DecoyDuck()
+        public ModelDuck()
         {
-            quackBehavior = new MuteQuack();
+            quackBehavior = new Quack();
             flyBehavior = new FlyNoWay();
         }
 
         public override string display()
         {
-            return "Sou um pato decorativo!";
+            return "Sou um pato modelo!";
         }
-
     }
 }

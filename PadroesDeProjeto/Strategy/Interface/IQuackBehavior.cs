@@ -1,7 +1,7 @@
 ﻿
 namespace Strategy.Duck.Interface
 {
-    interface IQuackable
+    public interface IQuackBehavior
     {
         string quack();
     }

@@ -1,7 +1,7 @@
 ﻿
 namespace Strategy.Duck.Interface
 {
-    interface IFlyable
+    public interface IFlyBehavior
     {
         string fly();
     }

@@ -3,21 +3,19 @@ using Strategy.Duck.Interface;
 
 namespace Strategy.Duck.Model
 {
-    class MallardDuck: Duck, IFlyable, IQuackable
+    public class MallardDuck : Duck
     {
+
+        public MallardDuck()
+        {
+            quackBehavior = new Quack();
+            flyBehavior = new FlyWithWings();
+        }
+
         public override string display()
         {
             return "Sou um pato Mallard!";
         }
 
-        public string fly()
-        {
-            return "Estou voando!";
-        }
-
-        public string quack()
-        {
-            return "Quack Quack!";
-        }
     }
 }

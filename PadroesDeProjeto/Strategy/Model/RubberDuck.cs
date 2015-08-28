@@ -3,16 +3,17 @@ using Strategy.Duck.Interface;
 
 namespace Strategy.Duck.Model
 {
-    class RubberDuck : Duck, IQuackable
+    public class RubberDuck : Duck
     {
+        public RubberDuck()
+        {
+            quackBehavior = new Squeak();
+            flyBehavior = new FlyNoWay();
+        }
+
         public override string display()
         {
             return "Sou um pato de borracha!";
-        }
-
-        public string quack()
-        {
-            return "Squeak Squeak!";
         }
 
     }
