@@ -1,21 +1,19 @@
 ﻿
-namespace Strategy.Model
-{
-    class RubberDuck : Duck
-    {
-        public override string quack()
-        {
-            return "Squeak Squeak!";
-        }
+using Strategy.Duck.Interface;
 
+namespace Strategy.Duck.Model
+{
+    class RubberDuck : Duck, IQuackable
+    {
         public override string display()
         {
             return "Sou um pato de borracha!";
         }
 
-        public override string fly()
+        public string quack()
         {
-            return "Não posso voar!";
+            return "Squeak Squeak!";
         }
+
     }
 }

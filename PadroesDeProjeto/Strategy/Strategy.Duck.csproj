@@ -41,9 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interface\IFlyable.cs" />
+    <Compile Include="Interface\IQuackable.cs" />
+    <Compile Include="Model\DecoyDuck.cs" />
     <Compile Include="Model\Duck.cs" />
     <Compile Include="Model\MallardDuck.cs" />
     <Compile Include="Model\RedHeadDuck.cs" />
+    <Compile Include="Model\RubberDuck.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
