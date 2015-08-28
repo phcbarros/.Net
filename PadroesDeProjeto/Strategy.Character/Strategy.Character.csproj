@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7C4F24C7-2A50-472D-B9C9-5F6594EA399B}</ProjectGuid>
+    <ProjectGuid>{A745DDD4-E971-4C1A-92E9-823B62D6103D}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Strategy.Duck</RootNamespace>
-    <AssemblyName>Strategy.Duck</AssemblyName>
+    <RootNamespace>Strategy.Character</RootNamespace>
+    <AssemblyName>Strategy.Character</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -41,26 +41,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interface\IFlyBehavior.cs" />
-    <Compile Include="Interface\IQuackBehavior.cs" />
-    <Compile Include="Model\DecoyDuck.cs" />
-    <Compile Include="Model\Duck.cs" />
-    <Compile Include="Model\FlyNoWay.cs" />
-    <Compile Include="Model\FlyRocketPowered.cs" />
-    <Compile Include="Model\FlyWithWings.cs" />
-    <Compile Include="Model\MallardDuck.cs" />
-    <Compile Include="Model\ModelDuck.cs" />
-    <Compile Include="Model\MuteQuack.cs" />
-    <Compile Include="Model\Quack.cs" />
-    <Compile Include="Model\RedHeadDuck.cs" />
-    <Compile Include="Model\RubberDuck.cs" />
-    <Compile Include="Model\Squeak.cs" />
+    <Compile Include="Behavior\AxeBehavior.cs" />
+    <Compile Include="Behavior\BowAndArrowBehavior.cs" />
+    <Compile Include="Behavior\KnifeBehavior.cs" />
+    <Compile Include="Behavior\SwordBehavior.cs" />
+    <Compile Include="Interface\IWeaponBehavior.cs" />
+    <Compile Include="Model\Character.cs" />
+    <Compile Include="Model\King.cs" />
+    <Compile Include="Model\Knight.cs" />
+    <Compile Include="Model\Queen.cs" />
+    <Compile Include="Model\Troll.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
