@@ -18,5 +18,10 @@ namespace Strategy.Model
             return "Sou um pato genérico!";
         }
 
+        public virtual string fly()
+        {
+            return "Estou voando!";
+        }
+
     }
 }
