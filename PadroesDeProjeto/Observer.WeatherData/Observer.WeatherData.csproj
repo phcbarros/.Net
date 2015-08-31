@@ -41,6 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interface\IDisplay.cs" />
+    <Compile Include="Interface\IObserver.cs" />
+    <Compile Include="Interface\ISubject.cs" />
     <Compile Include="Model\CurrentConditionDisplay.cs" />
     <Compile Include="Model\ForecastDisplay.cs" />
     <Compile Include="Model\StatisticsDisplay.cs" />

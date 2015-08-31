@@ -1,12 +1,24 @@
 ﻿using System;
 using System.Text;
+using Observer.WeatherData.Interface;
 
 namespace Observer.WeatherData.Model
 {
-    public class ForecastDisplay
+    public class ForecastDisplay : IObserver, IDisplay
     {
         private float currentPressure = 29.92f;
         private float lastPressure;
+        private ISubject weatherData;
+
+        #region Construtor
+        public ForecastDisplay(ISubject weatherData)
+        {
+            this.weatherData = weatherData;
+            weatherData.registerObserver(this);
+        }
+        #endregion
+
+        #region IObserver
 
         public void Update(float temperature, float humidity, float pressure)
         {
@@ -15,6 +27,10 @@ namespace Observer.WeatherData.Model
 
             Display();
         }
+
+        #endregion
+
+        #region IDisplay
 
         public void Display()
         {
@@ -37,6 +53,8 @@ namespace Observer.WeatherData.Model
 
             Console.WriteLine(sb.ToString());
         }
+
+        #endregion IDisplay
 
     }
 }

@@ -1,31 +1,55 @@
 ﻿
+using System.Collections.Generic;
+using Observer.WeatherData.Interface;
 namespace Observer.WeatherData.Model
 {
-    public class WeatherData
+    public class WeatherData : ISubject
     {
         private float temperature;
         private float humidity;
         private float pressure;
-        private CurrentConditionDisplay currentConditionsDisplay;
-        private StatisticsDisplay statisticsDisplay;
-        private ForecastDisplay forecastDisplay;
+        private List<IObserver> observers;
 
-        public WeatherData() {
-            currentConditionsDisplay = new CurrentConditionDisplay();
-            statisticsDisplay = new StatisticsDisplay();
-            forecastDisplay = new ForecastDisplay();
+        #region Construtor
+        
+        public WeatherData()
+        {
+            this.observers = new List<IObserver>();
         }
+
+        #endregion
+
+        #region ISubject
+
+        public void registerObserver(IObserver observer)
+        {
+            observers.Add(observer);
+        }
+
+        public void removeObserver(IObserver o)
+        {
+            var index = observers.IndexOf(o);
+            if (index >= 0)
+            {
+                observers.Remove(o);
+            }
+
+        }
+
+        public void notifyObservers()
+        {
+            foreach (var item in observers)
+            {
+                item.Update(temperature, humidity, pressure);
+            }
+
+        }
+
+        #endregion
 
         public void MeasurementsChanged()
         {
-            float temp = this.temperature;
-            float humidity = this.humidity;
-            float pressure = this.pressure;
-
-            currentConditionsDisplay.Update(temp, humidity, pressure);
-            statisticsDisplay.Update(temp, humidity, pressure);
-            forecastDisplay.Update(temp, humidity, pressure);
-
+            notifyObservers();
         }
 
         public void SetMeasurements(float temperature, float humidity,
@@ -36,5 +60,6 @@ namespace Observer.WeatherData.Model
             this.pressure = pressure;
             MeasurementsChanged();
         }
+
     }
 }
