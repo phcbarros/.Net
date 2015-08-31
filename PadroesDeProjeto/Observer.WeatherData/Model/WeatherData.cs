@@ -21,12 +21,12 @@ namespace Observer.WeatherData.Model
 
         #region ISubject
 
-        public void registerObserver(IObserver observer)
+        public void RegisterObserver(IObserver observer)
         {
             observers.Add(observer);
         }
 
-        public void removeObserver(IObserver o)
+        public void RemoveObserver(IObserver o)
         {
             var index = observers.IndexOf(o);
             if (index >= 0)
@@ -36,7 +36,7 @@ namespace Observer.WeatherData.Model
 
         }
 
-        public void notifyObservers()
+        public void NotifyObservers()
         {
             foreach (var item in observers)
             {
@@ -49,7 +49,7 @@ namespace Observer.WeatherData.Model
 
         public void MeasurementsChanged()
         {
-            notifyObservers();
+            NotifyObservers();
         }
 
         public void SetMeasurements(float temperature, float humidity,

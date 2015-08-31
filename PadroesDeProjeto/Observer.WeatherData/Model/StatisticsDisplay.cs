@@ -15,7 +15,7 @@ namespace Observer.WeatherData.Model
         public StatisticsDisplay(ISubject weatherData)
         {
             this.weatherData = weatherData;
-            weatherData.registerObserver(this);
+            weatherData.RegisterObserver(this);
         }
         #endregion
 
@@ -47,7 +47,6 @@ namespace Observer.WeatherData.Model
         public void Display()
         {
             Console.WriteLine(String.Format("Avg/Max/Min temperature = {0}F/{1}F/{2}F", RoundFloatToString(temperatureSum / numReadings), maxTemperature, minTemperature));
-
         }
 
         #endregion
@@ -58,6 +57,11 @@ namespace Observer.WeatherData.Model
             cultureInfo.NumberFormat.CurrencyDecimalDigits = 2;
             cultureInfo.NumberFormat.CurrencyDecimalSeparator = ",";
             return floatToRound.ToString("F", cultureInfo);
+        }
+
+        public void UnregisterObserver()
+        {
+            weatherData.RemoveObserver(this);
         }
 
 

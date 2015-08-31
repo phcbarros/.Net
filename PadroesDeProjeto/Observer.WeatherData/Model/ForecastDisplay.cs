@@ -14,7 +14,7 @@ namespace Observer.WeatherData.Model
         public ForecastDisplay(ISubject weatherData)
         {
             this.weatherData = weatherData;
-            weatherData.registerObserver(this);
+            weatherData.RegisterObserver(this);
         }
         #endregion
 
@@ -55,6 +55,11 @@ namespace Observer.WeatherData.Model
         }
 
         #endregion IDisplay
+
+        public void UnregisterObserver()
+        {
+            weatherData.RemoveObserver(this);
+        }
 
     }
 }

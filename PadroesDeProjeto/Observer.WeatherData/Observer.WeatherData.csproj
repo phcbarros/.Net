@@ -46,6 +46,7 @@
     <Compile Include="Interface\ISubject.cs" />
     <Compile Include="Model\CurrentConditionDisplay.cs" />
     <Compile Include="Model\ForecastDisplay.cs" />
+    <Compile Include="Model\HeatIndexDisplay.cs" />
     <Compile Include="Model\StatisticsDisplay.cs" />
     <Compile Include="Model\WeatherData.cs" />
     <Compile Include="Program.cs" />
