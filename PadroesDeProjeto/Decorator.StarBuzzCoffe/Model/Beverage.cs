@@ -10,7 +10,7 @@ namespace Decorator.StarBuzzCoffe.Model
     {
         protected string description = "Unknow Beverage";
 
-        public string GetDescription()
+        public virtual string GetDescription()
         {
             return description;
         }

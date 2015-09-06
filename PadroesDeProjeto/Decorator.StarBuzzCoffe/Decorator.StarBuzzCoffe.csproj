@@ -43,10 +43,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\Beverage.cs" />
+    <Compile Include="Model\CondimentDecorator.cs" />
     <Compile Include="Model\DarkRoast.cs" />
     <Compile Include="Model\Decaf.cs" />
     <Compile Include="Model\Expresso.cs" />
     <Compile Include="Model\HouseBlend.cs" />
+    <Compile Include="Model\Mocha.cs" />
+    <Compile Include="Model\Soy.cs" />
+    <Compile Include="Model\StemeadMilk.cs" />
+    <Compile Include="Model\Whip.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -8,11 +8,6 @@ namespace Decorator.StarBuzzCoffe.Model
             this.description = "House Blend Coffee";
         }
 
-        public override string GetDescription()
-        {
-            return description;
-        }
-
         public override double Cost()
         {
             return 0.89;
